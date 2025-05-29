@@ -1,0 +1,16 @@
+Guardrails
+Garak
+fastapi
+uvicorn
+pydantic
+httpx
+pytest
+pytest-asyncio
+sqlalchemy
+databases
+python-dotenv
+transformers
+torch
+accelerate
+safetensors
+sentencepiece
