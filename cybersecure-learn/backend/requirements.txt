@@ -1,0 +1,8 @@
+Flask
+FastAPI
+pydantic
+openai
+python-dotenv
+uvicorn
+pytest
+requests
