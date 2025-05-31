@@ -1,12 +1,17 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from api.endpoints import code_generation, scenarios, assessments, explanations
-from api.middleware import audit, validation
 
-app = FastAPI()
+app = FastAPI(title="Cybersecurity Education Platform API", version="1.0.0")
 
-# Include middleware
-app.add_middleware(audit.AuditMiddleware)
-app.add_middleware(validation.ValidationMiddleware)
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # Frontend URL
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Include API routes
 app.include_router(code_generation.router, prefix="/api/code", tags=["Code Generation"])
@@ -17,3 +22,7 @@ app.include_router(explanations.router, prefix="/api/explanations", tags=["Expla
 @app.get("/")
 def read_root():
     return {"message": "Welcome to the Cybersecurity Education Platform API"}
+
+@app.get("/health")
+def health_check():
+    return {"status": "healthy"}

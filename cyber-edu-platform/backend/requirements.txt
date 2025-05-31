@@ -1,16 +1,59 @@
-Guardrails
-Garak
-fastapi
-uvicorn
-pydantic
-httpx
-pytest
-pytest-asyncio
-sqlalchemy
-databases
-python-dotenv
-transformers
-torch
-accelerate
-safetensors
-sentencepiece
+# Core LLM and ML libraries
+transformers>=4.30.0
+torch>=2.0.0
+accelerate>=0.20.0
+safetensors>=0.3.0
+sentencepiece>=0.1.99
+huggingface_hub>=0.15.0
+
+# Security and validation tools
+guardrails-ai>=0.2.0
+garak>=0.9.0
+rebuff>=0.4.0
+llm-guard>=0.3.0
+
+# Web framework and API
+fastapi>=0.100.0
+uvicorn[standard]>=0.22.0
+pydantic>=2.0.0
+httpx>=0.24.0
+
+# Database and storage
+sqlalchemy>=2.0.0
+databases[postgresql]>=0.7.0
+alembic>=1.11.0
+redis>=4.5.0
+
+# Security and authentication
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+python-multipart>=0.0.6
+
+# Data processing and analysis
+pandas>=2.0.0
+numpy>=1.24.0
+scikit-learn>=1.3.0
+
+# Testing and development
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+black>=23.7.0
+flake8>=6.0.0
+
+# Monitoring and logging
+structlog>=23.1.0
+prometheus-client>=0.17.0
+
+# Environment and configuration
+python-dotenv>=1.0.0
+pyyaml>=6.0.0
+
+# Cybersecurity datasets and benchmarks
+datasets>=2.13.0
+evaluate>=0.4.0
+
+# Additional utilities
+aiofiles>=23.1.0
+python-slugify>=8.0.0
+cryptography>=41.0.0
